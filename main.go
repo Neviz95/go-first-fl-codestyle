@@ -28,43 +28,41 @@ func attack(charName, charClass string) string {
 // Обратите внимание на "if else" и на "else"
 // здесь сделать тоже самое
 func defence(charName, charClass string) string {
-	if charClass == "warrior" {
+	if charClass == war {
 		return fmt.Sprintf("%s блокировал %d урона.", charName, 10+randint(5, 10))
-	} else if charClass == "mage" {
+	} else if charClass == mage {
 		return fmt.Sprintf("%s блокировал %d урона.", charName, 10+randint(-2, 2))
-	} else if charClass == "healer" {
+	} else if charClass == heal {
 		return fmt.Sprintf("%s блокировал %d урона.", charName, 10+randint(2, 5))
-	} else {
-		return "неизвестный класс персонажа"
 	}
+	return "неизвестный класс персонажа"
 }
 
 // Обратите внимание на "if else" и на "else"
 // и здесь
 func special(charName, charClass string) string {
-	if charClass == "warrior" {
+	if charClass == war {
 		return fmt.Sprintf("%s применил специальное умение `Выносливость %d`", charName, 80+25)
-	} else if charClass == "mage" {
+	} else if charClass == mage {
 		return fmt.Sprintf("%s применил специальное умение `Атака %d`", charName, 5+40)
-	} else if charClass == "healer" {
+	} else if charClass == heal {
 		return fmt.Sprintf("%s применил специальное умение `Защита %d`", charName, 10+30)
-	} else {
-		return "неизвестный класс персонажа"
 	}
+	return "неизвестный класс персонажа"
 }
 
 // Здесь обратите внимание на имена параметров
 // здесь тоже вместо if написать switch
 func startTraining(charName, charClass string) string {
-	if charClass == "warrior" {
+	if charClass == war {
 		fmt.Printf("%s, ты Воитель - отличный боец ближнего боя.\n", charName)
 	}
 
-	if charClass == "mage" {
+	if charClass == mage {
 		fmt.Printf("%s, ты Маг - превосходный укротитель стихий.\n", charName)
 	}
 
-	if charClass == "healer" {
+	if charClass == heal {
 		fmt.Printf("%s, ты Лекарь - чародей, способный исцелять раны.\n", charName)
 	}
 
@@ -103,11 +101,11 @@ func choiseCharClass() string {
 	for approve_choice != "y" {
 		fmt.Print("Введи название персонажа, за которого хочешь играть: Воитель — warrior, Маг — mage, Лекарь — healer: ")
 		fmt.Scanf("%s\n", &charClass)
-		if charClass == "warrior" {
+		if charClass == war {
 			fmt.Println("Воитель — дерзкий воин ближнего боя. Сильный, выносливый и отважный.")
-		} else if charClass == "mage" {
+		} else if charClass == mage {
 			fmt.Println("Маг — находчивый воин дальнего боя. Обладает высоким интеллектом.")
-		} else if charClass == "healer" {
+		} else if charClass == heal {
 			fmt.Println("Лекарь — могущественный заклинатель. Черпает силы из природы, веры и духов.")
 		}
 		fmt.Print("Нажми (Y), чтобы подтвердить выбор, или любую другую кнопку, чтобы выбрать другого персонажа: ")
